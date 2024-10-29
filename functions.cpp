@@ -7,8 +7,10 @@ void SayHello() {
 }
 
 // with return no parameters
-int GenerateNumber() {
-  return 10;
+int BikinAngka() {
+  int result;
+  result = 0.2 + 0.3;
+  return result;
 }
 
 // no return with parameters
@@ -28,8 +30,8 @@ int main() {
   cout << "===\n" << endl;
 
   cout << "Memanggil function with return no parameters" << endl;
-  int num = GenerateNumber(); // Pemanggilan function
-  cout << "avg result: " << num << endl;
+  int result = BikinAngka(); // Pemanggilan function
+  cout << "avg result: " << result << endl;
   cout << "===\n" << endl;
 
   cout << "Memanggil function no return with parameters" << endl;
