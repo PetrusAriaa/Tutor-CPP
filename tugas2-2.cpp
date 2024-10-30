@@ -11,6 +11,7 @@ struct StudentType {
 
 // define array of StudentType with size of `SIZE`
 StudentType students[SIZE];
+int highestScoreIndex = 0;
 
 // function definition to get data from user input
 void getData() {
@@ -64,13 +65,21 @@ int getMaxScore() {
 
   for (int i = 0; i < SIZE; i++) {
     int currValue = students[i].testScore;
+    int currIndex = i;
     if (currValue > currHighest)
     {
       currHighest = currValue;
+      highestScoreIndex = currIndex;
     }
   }
 
   return currHighest;
+}
+
+// function definitinon to print student's name with highest score
+void getHighestScoreName() {
+  string studentName = students[highestScoreIndex].studentFName + " " + students[highestScoreIndex].studentLName;
+  cout << "Student Name: " << studentName << endl;
 }
 
 int main() {
@@ -80,13 +89,8 @@ int main() {
   setGrade();
 
   int highestStudentScore = getMaxScore();
-  cout << "highest score: " << highestStudentScore << endl;
+  cout << "\nhighest score: " << highestStudentScore << endl;
 
-  // for (int i = 0; i < SIZE; i++) {
-  //   cout << "Student " << i + 1 << " | First name: " << students[i].studentFName << endl;
-  //   cout << "Student " << i + 1 << " | Last name: " << students[i].studentLName << endl;
-  //   cout << "Student " << i + 1 << " | score: " << students[i].testScore << endl;
-  //   cout << "Student " << i + 1 << " | grade: " << students[i].grade << endl;
-  // }
+  getHighestScoreName();
   return 0;
 }
